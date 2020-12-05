@@ -21,8 +21,7 @@ Of course, your expense report is much larger. Find the two entries that sum to 
 =
 */
 
-fun main(args: Array<String>){
-    println("Enter Numbers")
+fun day1_part1(){
     val entries = readLines("data/day1.csv").map { it.toInt() }
     println("Array = $entries")
     for (i in entries.indices){
@@ -34,4 +33,33 @@ fun main(args: Array<String>){
             }
         }
     }
+}
+
+/*
+The Elves in accounting are thankful for your help; one of them even offers you a starfish coin they had left over from a past vacation.
+They offer you a second one if you can find three numbers in your expense report that meet the same criteria.
+
+Using the above example again, the three entries that sum to 2020 are 979, 366, and 675.
+Multiplying them together produces the answer, 241861950.
+
+In your expense report, what is the product of the three entries that sum to 2020?
+*/
+
+fun day1_part2(){
+    val entries = readLines("data/day1.csv").map { it.toInt() }
+    println("Array = $entries")
+    for (i in entries.indices){
+        for (j in i+1 until entries.size){
+            for (k in j+1 until entries.size){
+                val sum = entries[i]+entries[j]+entries[k]
+                if(sum == 2020){
+                    println("Found value ${entries[i]},${entries[j]},${entries[k]}  = $sum")
+                    println(entries[i]*entries[j]*entries[k])
+                }
+            }
+        }}
+}
+
+fun main(args: Array<String>){
+    day1_part2()
 }
