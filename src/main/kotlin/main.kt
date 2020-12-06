@@ -14,3 +14,5 @@ fun readLines(path: String): List<String> {
     input.close()
     return lines.toList()
 }
+
+fun Int.isIn(from: Int, to: Int) = this in from .. to
