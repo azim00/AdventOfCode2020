@@ -16,3 +16,5 @@ fun readLines(path: String): List<String> {
 }
 
 fun Int.isIn(from: Int, to: Int) = this in from .. to
+
+fun List<Int>.mul() =  this.reduce(Int::times)
